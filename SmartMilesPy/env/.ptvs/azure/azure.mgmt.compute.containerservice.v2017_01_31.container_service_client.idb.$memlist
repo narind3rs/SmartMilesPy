@@ -1,0 +1,9 @@
+AzureConfiguration
+Serializer
+VERSION
+ContainerServiceClient
+ContainerServiceClientConfiguration
+Deserializer
+ContainerServicesOperations
+models
+ServiceClient

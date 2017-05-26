@@ -1,0 +1,8 @@
+VERSION
+__all__
+data_lake_analytics_job_management_client
+DataLakeAnalyticsJobManagementClient
+operations
+version
+models
+__version__

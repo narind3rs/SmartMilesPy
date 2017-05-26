@@ -1,0 +1,8 @@
+container_service_client
+VERSION
+__all__
+ContainerServiceClient
+operations
+version
+models
+__version__

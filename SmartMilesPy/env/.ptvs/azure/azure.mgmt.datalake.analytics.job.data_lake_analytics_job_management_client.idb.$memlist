@@ -1,0 +1,9 @@
+AzureConfiguration
+Serializer
+VERSION
+Deserializer
+JobOperations
+models
+DataLakeAnalyticsJobManagementClientConfiguration
+ServiceClient
+DataLakeAnalyticsJobManagementClient
