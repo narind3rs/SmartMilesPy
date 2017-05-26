@@ -145,7 +145,7 @@ class Truck(models.Model):
 
 @python_2_unicode_compatible
 class ContactInfo(models.Model):
-	
+	preferred_name = models.CharField(max_length = LONGSTR, blank = True, null = True)
 	primary_phone = PhoneNumberField(null = True, unique = True, blank = True)
 	seondary_phone = PhoneNumberField(blank = True, null = True)
 	#address = models.ForeignKey(Address, related_name = 'contact_address', null = True)
@@ -158,17 +158,15 @@ class ContactInfo(models.Model):
 	email_address = models.EmailField()
 
 	def __str__(self):
-		return '{0} {1}'.format(self.email_address, str(self.primary_phone))
+		return '{0} {1}'.format(self.preferred_name, str(self.primary_phone))
 
 
 @python_2_unicode_compatible
 class Contact(models.Model):
 	first_name = models.CharField(max_length = LONGSTR)
 	last_name = models.CharField(max_length = LONGSTR)
-	relationship = models.CharField(max_length = SHORTSTR)
-	
+	relationship = models.CharField(max_length = SHORTSTR)	
 	contact_info = models.ForeignKey(ContactInfo, related_name = 'contact_info', null = True)
-
 	def __str__(self):
 		return "{0} {1}".format(self.first_name, self.last_name)
 
@@ -286,7 +284,7 @@ class Trip(models.Model):
 	drivers = models.ManyToManyField(Driver)
 
 	def __str__(self):
-		return '{0} ({1})'.format(self.name, self.status)
+		return '{0} ({1})'.format(self.name, self.notes)
 
 
 @python_2_unicode_compatible
