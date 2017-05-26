@@ -26,7 +26,7 @@ SECRET_KEY = '2ff189af-398f-4d00-9510-959749fd34f3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tsmartmiles.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['tsmartmiles.us-east-1.elasticbeanstalk.com','localhost', '.opnyn.com', '.diamondswift.com']
 
 
 # Application definition
@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	#'sslserver',
+	'djangosecure',
 	'phonenumber_field',
 	'rest_framework',
 	'auth_api',
@@ -54,6 +56,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	'djangosecure.middleware.SecurityMiddleware',
 ]
 
 ROOT_URLCONF = 'SmartMilesPy.urls'
@@ -139,13 +142,22 @@ USE_L10N = True
 
 USE_TZ = True
 
+SECURE_SSL_REDIRECT = False
+
+SESSION_COOKIE_SECURE = True
+
+#CSRF_COOKIE_SECURE = True
+
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+SECURE_HSTS_SECONDS = 31536000
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
+#STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
 
 STATIC_URL = '/static/'
 
 #commented out below and changed path to /www/static
-#STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
