@@ -293,3 +293,6 @@ class RoadIncident(models.Model):
 	description = models.TextField(blank = False)
 	incident_date_time = models.DateTimeField(null = True, blank = True)
 
+	def __str__(self):
+		return '{0} {1}'.format(self.description, str(self.incident_date_time))
+
