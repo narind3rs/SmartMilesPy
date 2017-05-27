@@ -1,0 +1,11 @@
+check_sts_include_subdomains
+check_secret_key
+check_sts
+check_ssl_redirect
+check_security_middleware
+check_content_type_nosniff
+conf
+check_frame_deny
+boolean_check
+check_xss_filter
+settings

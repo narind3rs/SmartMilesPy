@@ -144,13 +144,13 @@ USE_TZ = True
 
 SECURE_SSL_REDIRECT = False
 
-SESSION_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
 
 #CSRF_COOKIE_SECURE = True
 
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
-SECURE_HSTS_SECONDS = 31536000
+#SECURE_HSTS_SECONDS = 31536000
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/

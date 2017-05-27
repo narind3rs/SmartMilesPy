@@ -1,10 +1,14 @@
 branch-defaults:
   default:
     environment: smartmiles-test
+environment-defaults:
+  smartmiles-test:
+    branch: null
+    repository: null
 global:
   application_name: smartmiles
   branch: null
-  default_ec2_keyname: dt-app-srvr
+  default_ec2_keyname: dt-smartmiles-srvr-key
   default_platform: Python 3.4
   default_region: us-east-1
   instance_profile: null
